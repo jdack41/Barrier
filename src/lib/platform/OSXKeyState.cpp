@@ -43,6 +43,9 @@ static const UInt32 s_launchpadVK = 131;
 
 static const UInt32 s_osxNumLock = 1 << 16;
 
+static const UInt32 s_int4VK = 0x8a; // international4
+static const UInt32 s_int5VK = 0x8b; // international5
+
 struct KeyEntry {
 public:
     KeyID                m_keyID;
@@ -125,8 +128,11 @@ static const KeyEntry    s_controlKeys[] = {
     { kKeyBrightnessDown, s_brightnessDown },
 
     // JIS keyboards only
-    { kKeyMuhenkan, kVK_JIS_Eisu },
-    { kKeyHenkan, kVK_JIS_Kana }
+    { kKeyEisuToggle, kVK_JIS_Eisu },
+    { kKeyKana, kVK_JIS_Kana },
+    { kKeyMuhenkan, s_int5VK },
+    { kKeyHenkan, s_int4VK },
+    { kKeyZenkaku, kVK_ANSI_Grave }
 };
 
 
